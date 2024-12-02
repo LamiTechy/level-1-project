@@ -1,21 +1,21 @@
 const app = document.getElementById("app");
 
-// Helper Functions
+
 const saveToLocalStorage = (key, value) => localStorage.setItem(key, JSON.stringify(value));
 const getFromLocalStorage = (key) => JSON.parse(localStorage.getItem(key)) || {};
 
-// State
+
 let currentUser = null;
 
-// Function to generate a random expiry date (1-72 hours from now)
+
 function generateRandomExpiry() {
   const now = new Date();
-  const randomHours = Math.floor(Math.random() * 72) + 1; // Random number of hours (1-72)
+  const randomHours = Math.floor(Math.random() * 72) + 1; 
   now.setHours(now.getHours() + randomHours);
-  return now.toLocaleString(); // Return the expiry as a human-readable string
+  return now.toLocaleString(); 
 }
 
-// Pages
+
 const renderSignUp = () => {
   app.innerHTML = `
     <div class="container">
@@ -47,7 +47,7 @@ const renderSignUp = () => {
       return;
     }
 
-    // Save new user to local storage
+
     users[username] = { password };
     saveToLocalStorage("users", users);
 
@@ -78,7 +78,7 @@ const renderLogin = () => {
 
     const users = getFromLocalStorage("users");
 
-    // Validate user credentials
+    
     if (users[username] && users[username].password === password) {
       currentUser = username;
       alert(`Login successful! Welcome, ${username}`);
@@ -163,7 +163,7 @@ const renderPaymentGateway = (ticketDetails) => {
       expiryDate !== "" &&
       cvv.length === 3
     ) {
-      // Save ticket after payment
+     
       const allBookings = getFromLocalStorage("bookings");
       const userBookings = allBookings[currentUser] || [];
       userBookings.push(ticketDetails);
@@ -211,10 +211,10 @@ const renderBookBus = () => {
       date,
       busType,
       ticketNumber,
-      expiry: expiryDate, // Add expiry date to ticket details
+      expiry: expiryDate,
     };
 
-    // Redirect to payment gateway with ticket details
+   
     renderPaymentGateway(ticketDetails);
   });
 };
@@ -257,7 +257,7 @@ const renderTickets = () => {
   `;
 };
 
-// Initialize storage for users and bookings
+
 if (!getFromLocalStorage("users")) {
   saveToLocalStorage("users", {});
 }
@@ -265,15 +265,15 @@ if (!getFromLocalStorage("bookings")) {
   saveToLocalStorage("bookings", {});
 }
 
-// Initial Load
+
 if (getFromLocalStorage("users")) {
   renderLogin();
 } else {
   renderSignUp();
 }
 const logout = () => {
-    currentUser = null; // Clear current user
+    currentUser = null; 
     alert("You have been logged out.");
-    renderLogin(); // Redirect to login page
+    renderLogin();
   };
   
