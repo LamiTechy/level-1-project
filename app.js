@@ -112,6 +112,7 @@ const renderHome = () => {
         <button onclick="renderAbout()">Learn More</button>
         <button onclick="renderBookBus()">Book a Bus</button>
         <button onclick="renderTickets()">My Tickets</button>
+        <button onclick="logout()">Logout</button>
       </section>
     </div>
   `;
@@ -125,6 +126,7 @@ const renderAbout = () => {
       </header>
       <p>EasyBus is your reliable companion for hassle-free bus travel. Our platform offers a streamlined process for booking and managing your trips. Whether you're traveling for work or leisure, EasyBus ensures a comfortable and efficient journey.</p>
       <button onclick="renderHome()">Go Back</button>
+       <button onclick="logout()">Logout</button
     </div>
   `;
 };
@@ -269,3 +271,9 @@ if (getFromLocalStorage("users")) {
 } else {
   renderSignUp();
 }
+const logout = () => {
+    currentUser = null; // Clear current user
+    alert("You have been logged out.");
+    renderLogin(); // Redirect to login page
+  };
+  
