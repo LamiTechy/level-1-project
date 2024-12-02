@@ -203,8 +203,8 @@ const renderBookBus = () => {
     const date = document.getElementById("date").value;
     const busType = document.getElementById("busType").value;
 
-    const ticketNumber = Math.floor(Math.random() * 100000); // Generate random ticket number
-    const expiryDate = generateRandomExpiry(); // Generate random expiry
+    const ticketNumber = Math.floor(Math.random() * 100000);
+    const expiryDate = generateRandomExpiry();
 
     const ticketDetails = {
       destination,
