@@ -187,7 +187,7 @@ const renderBookBus = () => {
         <h1>Book A Bus</h1>
       </header>
       <form id="bookBusForm">
-        <input type="text" id="destination" placeholder="Enter Your location" required class="form-control"/><br>
+        <input type="text"  placeholder="Enter Your location" required class="form-control"/><br>
         <input type="text" id="destination" placeholder="Enter Destination" required class="form-control"/><br>
         <input type="date" id="date" required class="form-control"/><br>
         <select id="busType" class="form-control">
