@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -19,7 +19,7 @@ body {
     text-align: center;
   }
   
-  /* Background Animation */
+  
   @keyframes backgroundAnimation {
     0% {
       background-position: 0% 50%;
@@ -32,7 +32,7 @@ body {
     }
   }
   
-  /* Floating Shapes */
+
   .background-shapes {
     position: fixed;
     top: 0;
@@ -86,7 +86,7 @@ body {
     animation-duration: 18s;
   }
   
-  /* Floating Animation */
+  
   @keyframes float {
     0% {
       transform: translateY(0) rotate(0deg);
@@ -102,7 +102,7 @@ body {
     }
   }
   
-  /* Buttons */
+  
   button {
     margin: 10px;
     padding: 10px 20px;

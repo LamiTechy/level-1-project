@@ -18,16 +18,16 @@ function generateRandomExpiry() {
 
 const renderSignUp = () => {
   app.innerHTML = `
-    <div class="container">
+    <div class="container mb-3 mx-auto">
       <header>
         <h1>Sign Up</h1>
       </header>
-      <form id="signUpForm">
-        <input type="text" id="username" placeholder="Enter Username" required />
-        <input type="password" id="password" placeholder="Enter Password" required />
-        <button type="submit">Sign Up</button>
-      </form>
-      <button onclick="renderLogin()">Already have an account? Log In</button>
+      <form id="signUpForm" >
+        <input type="text" id="username" placeholder="Enter Username" required class="form-control"/><br>
+        <input type="password" id="password" placeholder="Enter Password" required class="form-control"/><br>
+        <button type="submit" style="border-radius: 5px;">Sign Up</button>
+      </form><br>
+      <button onclick="renderLogin()" style="border-radius: 5px;">Already have an account? Log In</button>
     </div>
   `;
 
@@ -58,16 +58,17 @@ const renderSignUp = () => {
 
 const renderLogin = () => {
   app.innerHTML = `
-    <div class="container">
+  
+    <div class="container mb-3 mx-auto">
       <header>
         <h1>Login</h1>
       </header>
       <form id="loginForm">
-        <input type="text" id="username" placeholder="Enter Username" required />
-        <input type="password" id="password" placeholder="Enter Password" required />
-        <button type="submit">Login</button>
-      </form>
-      <button onclick="renderSignUp()">Don't have an account? Sign Up</button>
+        <input type="text" id="username" placeholder="Enter Username" required class="form-control"/><br>
+        <input type="password" id="password" placeholder="Enter Password" required class="form-control"/><br>
+        <button type="submit" style="border-radius: 5px;">Login</button><br>
+      </form><br>
+      <button onclick="renderSignUp()" style="border-radius: 5px;">Don't have an account? Sign Up</button>
     </div>
   `;
 
@@ -97,7 +98,7 @@ const renderHome = () => {
       </header>
       <section>
         <h2>Your journey starts here!</h2>
-        <p>Book your bus tickets with ease and convenience. EasyBus provides an efficient and user-friendly way to travel.</p>
+        <p>Book your bus tickets with ease and convenience. EasyBus provides an efficient and user-friendly way to travel. Cutting The Hassle Of Queing To Book Ticket.</p>
       </section>
       <section style="margin-top: 20px;">
         <h3>Why Choose EasyBus?</h3>
@@ -109,10 +110,10 @@ const renderHome = () => {
         </ul>
       </section>
       <section style="margin-top: 20px; text-align: center;">
-        <button onclick="renderAbout()">Learn More</button>
-        <button onclick="renderBookBus()">Book a Bus</button>
-        <button onclick="renderTickets()">My Tickets</button>
-        <button onclick="logout()">Logout</button>
+        <button onclick="renderAbout()" style="border-radius: 5px;">Learn More</button>
+        <button onclick="renderBookBus()" style="border-radius: 5px;">Book a Bus</button>
+        <button onclick="renderTickets()" style="border-radius: 5px;">My Tickets</button>
+        <button onclick="logout()" style="border-radius: 5px;">Logout</button>
       </section>
     </div>
   `;
@@ -125,27 +126,28 @@ const renderAbout = () => {
         <h1>About EasyBus</h1>
       </header>
       <p>EasyBus is your reliable companion for hassle-free bus travel. Our platform offers a streamlined process for booking and managing your trips. Whether you're traveling for work or leisure, EasyBus ensures a comfortable and efficient journey.</p>
-      <button onclick="renderHome()">Go Back</button>
-       <button onclick="logout()">Logout</button
+      <button onclick="renderHome()" style="border-radius: 5px;">Go Back</button>
+       <button onclick="logout()" style="border-radius: 5px;">Logout</button
     </div>
   `;
 };
 
 const renderPaymentGateway = (ticketDetails) => {
   app.innerHTML = `
-    <div class="container">
+    <div class="container mb-3 mx-auto">
       <header>
-        <h1>Payment Gateway</h1>
+        <h1>Make Your Payment</h1>
       </header>
+      <p>You Are Just A Few Clicks Away<p/>
       <p>Please enter your payment details to confirm your booking:</p>
       <form id="paymentForm">
-        <input type="text" id="cardNumber" placeholder="Card Number (16 digits)" maxlength="16" required />
-        <input type="text" id="cardHolder" placeholder="Card Holder Name" required />
-        <input type="month" id="expiryDate" placeholder="Expiry Date" required />
-        <input type="text" id="cvv" placeholder="CVV (3 digits)" maxlength="3" required />
-        <button type="submit">Pay Now</button>
-      </form>
-      <button onclick="renderHome()">Cancel Payment</button>
+        <input type="text" id="cardNumber" placeholder="Card Number (16 digits)" maxlength="16" required class="form-control"/><br>
+        <input type="text" id="cardHolder" placeholder="Card Holder Name" required class="form-control"/><br>
+        <input type="month" id="expiryDate" placeholder="Expiry Date" required class="form-control"/><br>
+        <input type="text" id="cvv" placeholder="CVV (3 digits)" maxlength="3" required class="form-control"/><br>
+        <button type="submit" style="border-radius: 5px;">Pay Now</button><br>
+      </form><br>
+      <button onclick="renderHome()" style="border-radius: 5px;">Cancel Payment</button>
     </div>
   `;
 
@@ -180,21 +182,21 @@ const renderPaymentGateway = (ticketDetails) => {
 
 const renderBookBus = () => {
   app.innerHTML = `
-    <div class="container">
+    <div class="container mb-3 mx-auto">
       <header>
-        <h1>Book Bus</h1>
+        <h1>Book A Bus</h1>
       </header>
       <form id="bookBusForm">
-        <input type="text" id="destination" placeholder="Enter Your location" required />
-        <input type="text" id="destination" placeholder="Enter Destination" required />
-        <input type="date" id="date" required />
-        <select id="busType">
+        <input type="text" id="destination" placeholder="Enter Your location" required class="form-control"/><br>
+        <input type="text" id="destination" placeholder="Enter Destination" required class="form-control"/><br>
+        <input type="date" id="date" required class="form-control"/><br>
+        <select id="busType" class="form-control">
           <option value="Regular">Regular</option>
           <option value="Luxury">Luxury</option>
-        </select>
-        <button type="submit">Proceed to Payment</button>
-      </form>
-      <button onclick="renderHome()">Go Back</button>
+        </select><br>
+        <button type="submit" style="border-radius: 5px;">Proceed to Payment</button><br>
+      </form><br>
+      <button onclick="renderHome()" style="border-radius: 5px;">Go Back</button>
     </div>
   `;
 
@@ -244,7 +246,7 @@ const renderTickets = () => {
       <div class="tickets-list">
         ${bookings.map((ticket, index) => `
           <div class="ticket">
-            <h3>Ticket #${index + 1}</h3>
+            <h3>Ticket No.${index + 1}</h3>
             <p><strong>Destination:</strong> ${ticket.destination}</p>
             <p><strong>Date:</strong> ${ticket.date}</p>
             <p><strong>Bus Type:</strong> ${ticket.busType}</p>
@@ -253,7 +255,7 @@ const renderTickets = () => {
           </div>
         `).join('')}
       </div>
-      <button onclick="renderHome()">Go Back</button>
+      <button onclick="renderHome()" style="border-radius: 5px;">Go Back</button>
     </div>
   `;
 };
