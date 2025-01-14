@@ -137,6 +137,9 @@ body {
       font-size: 0.9em;
       padding: 8px 15px;
     }
+    .logout{
+      margin-top: 20px;
+    }
   }
   
   @media (max-width: 768px) {
@@ -151,6 +154,9 @@ body {
     button {
       font-size: 0.85em;
       padding: 6px 10px;
+    }
+    .logout{
+      margin-top: 20px;
     }
   }
   
