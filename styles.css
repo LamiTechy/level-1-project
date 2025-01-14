@@ -172,6 +172,9 @@ body {
     .shape {
       display: none; 
     }
+    .logout{
+      margin-top: 20px;
+    }
   }
 ul, ol {
     list-style: none;
