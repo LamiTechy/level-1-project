@@ -113,7 +113,7 @@ const renderHome = () => {
         <button onclick="renderAbout()" style="border-radius: 5px;">Learn More</button>
         <button onclick="renderBookBus()" style="border-radius: 5px;">Book a Bus</button>
         <button onclick="renderTickets()" style="border-radius: 5px;">My Tickets</button>
-        <button onclick="logout()" style="border-radius: 5px;">Logout</button>
+        <button onclick="logout()" style="border-radius: 5px;" class="logout">Logout</button>
       </section>
     </div>
   `;
@@ -127,7 +127,7 @@ const renderAbout = () => {
       </header>
       <p>EasyBus is your reliable companion for hassle-free bus travel. Our platform offers a streamlined process for booking and managing your trips. Whether you're traveling for work or leisure, EasyBus ensures a comfortable and efficient journey.</p>
       <button onclick="renderHome()" style="border-radius: 5px;">Go Back</button>
-       <button class="logout" onclick="logout()" style="border-radius: 5px;">Logout</button
+       <button onclick="logout()" style="border-radius: 5px;">Logout</button
     </div>
   `;
 };
